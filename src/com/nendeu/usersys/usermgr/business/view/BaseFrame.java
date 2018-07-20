@@ -1,25 +1,31 @@
 package com.nendeu.usersys.usermgr.business.view;
 
 import com.nendeu.usersys.usermgr.business.domain.UserDto;
-
+/**
+ * 视图接口，所以视图类都继承自该接口
+ * @author Heyouth
+ *
+ */
 public interface BaseFrame {
 	/**
-	 * 行为-显示页面
+	 * 视图-显示页面
 	 */
 	public void show();
 	/**
-	 * 行为-显示查找页面
+	 * 视图-显示查找页面
 	 */
 	public void searchShow();
 	/**
-	 * 行为-增加用户页面
-	 * @param type
+	 * 视图-注册用户页面
 	 */
-	public void addShow(String type);
+	public void addShow();
 	/**
-	 * 行为-更新用户信息页面
-	 * @param type
-	 * @param dto
+	 * 视图-增加用户页面
+	 * @return 更新记录条目数
 	 */
 	public void updateShow(String type,UserDto dto);
+	/**
+	 * 视图-展示当前用户信息
+	 */
+	public void msgShow();
 }

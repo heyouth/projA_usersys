@@ -31,7 +31,9 @@ public class TypeUtil {
 	 * @return 日期字符串
 	 */
 	public static String DateTostr(Date date) {
-		String str = null;
+		String str = "";
+		if(date==null)
+			return str;
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		str = sdf.format(date);
 		return str;
@@ -71,6 +73,12 @@ public class TypeUtil {
 		}
 		return date;
 	}
+	
+	/**
+	 * Email格式检验方法
+	 * @param email 需检验的字符串
+	 * @return 检验结果
+	 */
 	public static boolean checkMail(String email) {
 		boolean flag = false;
 		String regEx = "^[a-zA-Z0-9_.-]+@[a-zA-Z0-9-]+(\\.[a-zA-Z0-9-]+)*\\.[a-zA-Z0-9]{2,6}$";
@@ -83,9 +91,22 @@ public class TypeUtil {
 		}
 		return flag;
 	}
-	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		
+	
+	/**
+	 * 日期格式检验方法
+	 * @param date 需检验的字符串
+	 * @return 检验结果
+	 */
+	public static boolean checkDate(String date) {
+		boolean flag = false;
+		String regEx = "^((?:19|20)\\d\\d)-(0[1-9]|1[012])-(0[1-9]|[12][0-9]|3[01])$";
+		try {
+			if(date.matches(regEx)) {
+				flag = true;
+			}
+		}catch(Exception e) {
+			throw new EmailException("日期正则匹配表达式匹配异常",e );
+		}
+		return flag;
 	}
-
 }

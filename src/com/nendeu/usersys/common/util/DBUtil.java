@@ -8,17 +8,20 @@ import java.sql.Statement;
 
 import com.nendeu.usersys.common.exception.DaoException;
 /**
- * 数据库工具类-数据库连接
+ * 数据库Util类
  * @author Heyouth
  *
  */
 public class DBUtil {
+	//数据库端口
 	private static final String URL = "jdbc:oracle:thin:@localhost:1521:orcl";
+	//数据库用户名
 	private static final String USER = "scott";
+	//数据库密码
 	private static final String PASSWORD = "123456";
 	/**
-	 * 连接数据库并返回数据库连接对象
-	 * @return 返回数据库的连接对象
+	 * 数据库连接方法:连接数据库并一个返回数据库连接对象
+	 * @return 返回数据库连接对象
 	 */
 	public static Connection getConnection() {
 		Connection conn = null;
@@ -34,6 +37,11 @@ public class DBUtil {
 		}
 		return conn;																	//返回连接对象
 	}
+	
+	/**
+	 * 关闭数据库连接对象方法
+	 * @param conn 需关闭的数据库连接对象
+	 */
 	public static void closeConnection(Connection conn) {
 		try {
 			if(conn!=null) {
@@ -44,6 +52,11 @@ public class DBUtil {
 			
 		}
 	}
+	
+	/**
+	 * 关闭Statement对象方法
+	 * @param stmt  需关闭的Statement对象
+	 */
 	public static void closeStatement(Statement stmt) {
 		try {
 			if(stmt!=null) {
@@ -54,6 +67,11 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * 关闭ResultSet对象方法
+	 * @param rs 需关闭的ResultSet
+	 */
 	public static void closeResultSet(ResultSet rs) {
 		try {
 			if(rs!=null) {
@@ -64,6 +82,11 @@ public class DBUtil {
 			e.printStackTrace();
 		}
 	}
+	
+	/**
+	 * 开启数据库事务方法
+	 * @param conn 数据库连接对象
+	 */
 	public static void beginTransaction(Connection conn) {
 		try {
 			//事务自动提交模式转换为false
@@ -73,6 +96,11 @@ public class DBUtil {
 			e.printStackTrace();
 		}	
 	}
+	
+	/**
+	 * 提交数据库事务方法
+	 * @param conn 数据库连接对象
+	 */
 	public static void commit(Connection conn) {
 		try {
 			//提交事务
@@ -83,6 +111,11 @@ public class DBUtil {
 			System.out.println("ERROR:提交事务异常！");
 		}
 	}
+	
+	/**
+	 * 回滚数据库事务方法:在对数据库未执行提交事务前可以通过该方法恢复到修改前
+	 * @param conn 数据库连接对象
+	 */
 	public static void rollbrack(Connection conn) {
 		try {
 			//回滚事务
