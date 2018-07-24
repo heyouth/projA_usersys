@@ -98,8 +98,8 @@ public class UserController{
 
 	/**
 	 * 用户Controller更新密码方法：传递用户名以及密码
-	 * @param 用户名
-	 * @param 新密码 
+	 * @param sid 用户名
+	 * @param password 新密码 
 	 * @return 旧密码
 	 */
 	public String updatePwd(int sid,String password) {

@@ -18,7 +18,7 @@ public class DBUtil {
 	//数据库用户名
 	private static final String USER = "scott";
 	//数据库密码
-	private static final String PASSWORD = "123456";
+	private static final String PASSWORD = "123321";
 	/**
 	 * 数据库连接方法:连接数据库并一个返回数据库连接对象
 	 * @return 返回数据库连接对象

@@ -36,7 +36,7 @@ public interface UserDao extends BaseDao {
 	
 	/**
 	 * 用户dao管理员删除方法
-	 * @param dto 删除的用户名
+	 * @param sid 删除的用户名
 	 * @return 更新记录的条目数
 	 */
 	public int deleteUserById(int sid);

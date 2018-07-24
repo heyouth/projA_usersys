@@ -24,7 +24,7 @@ public class NormalFrame implements BaseFrame {
 	/**
 	 * 构造方法
 	 * 获取用户dto
-	 * @param dto
+	 * @param dto 当前用户信息
 	 */
 	public NormalFrame(UserDto dto) {
 		this.dto = dto;

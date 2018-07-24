@@ -50,9 +50,9 @@ public interface UserService {
 	
 	/**
 	 * 用户Service 修改密码方法
-	 * @param sid
-	 * @param password
-	 * @return
+	 * @param sid 修改用户名
+	 * @param password 修改密码
+	 * @return 修改后用户密码
 	 */
 	String updatePassword(int sid, String password);
 
@@ -87,9 +87,9 @@ public interface UserService {
 	
 	/**
 	 * 用户Service 管理员分页获取有效的用户名信息方法
-	 * @param pageNo
-	 * @param pageSize
-	 * @return
+	 * @param pageNo 页码
+	 * @param pageSize 分页大小
+	 * @return 页用户信息集合
 	 */
 	List<UserDto> getValidUser(int pageNo, int pageSize);
 

@@ -176,7 +176,7 @@ public class UserDaoImpl implements UserDao {
 	
 	/**
 	 * 用户dao管理员删除具体实现方法
-	 * @param dto 删除的用户名
+	 * @param sid 删除的用户名
 	 * @return 更新记录的条目数
 	 */
 	public int deleteUserById(int sid) {
@@ -483,11 +483,10 @@ public class UserDaoImpl implements UserDao {
 		ResultSet rs = null;
 		try {
 			//设置查询语句
-			String sql = "select * from (select T2.*,rownum RN from (select T1.* from T_USER T1 where SNAME like ? order by ID) T2) where RN>? and RN<=?";
-//			prestmt = conn.prepareStatement("select * from "
-//											+ "(select T2.*,rownum RN from "
-//												+ "(select T1.* from T_USER T1 where SNAME like '%?%' order by ID) T2) "
-//												+ "where RN>? and RN<=?");
+			String sql = "select * from "
+						+ "(select T2.*,rownum RN from "
+							+ "(select T1.* from T_USER T1 where SNAME like ? order by ID)"
+					 + " T2) where RN>? and RN<=?";
 			prestmt = conn.prepareStatement(sql);
 			
 			//设置需获取信息的编号

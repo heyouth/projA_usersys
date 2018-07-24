@@ -26,7 +26,7 @@ public class AdminFrame extends NormalFrame {
 	/**
 	 * 构造方法
 	 * 获取管理员dto
-	 * @param dto
+	 * @param dto 当前用户信息
 	 */
 	public AdminFrame(UserDto dto) {
 		super(dto);

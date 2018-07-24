@@ -21,7 +21,8 @@ public interface BaseFrame {
 	public void addShow();
 	/**
 	 * 视图-增加用户页面
-	 * @return 更新记录条目数
+	 * @param type 更新用户方法类型
+	 * @param dto 更新信息
 	 */
 	public void updateShow(String type,UserDto dto);
 	/**

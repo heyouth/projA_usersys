@@ -123,8 +123,8 @@ public class UserServiceImpl implements UserService {
 	}
 
 	/**
-	 * 用户Service管理员添加用户信息方法
-	 * @param dto 用于存储用户信息
+	 * 用户Service管理员删除用户信息方法
+	 * @param sid 删除用户名
 	 * @return 更新记录条目数
 	 */
 	public int deleteUser(int sid) {
@@ -184,9 +184,9 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 用户Service 修改密码方法
-	 * @param sid
-	 * @param password
-	 * @return
+	 * @param sid 修改用户名
+	 * @param password 修改密码
+	 * @return 修改后密码
 	 */
 	public String updatePassword(int sid, String password) {
 		Connection conn = null;
@@ -323,9 +323,9 @@ public class UserServiceImpl implements UserService {
 
 	/**
 	 * 用户Service 管理员分页获取有效的用户名信息方法
-	 * @param pageNo
-	 * @param pageSize
-	 * @return
+	 * @param pageNo 页码
+	 * @param pageSize 分页大小
+	 * @return 页用户信息集合
 	 */
 	public List<UserDto> getValidUser(int pageNo, int pageSize) {
 		Connection conn = null;
